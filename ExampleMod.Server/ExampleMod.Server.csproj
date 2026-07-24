@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <!-- References the host runtime and server SDK. The generator lives under Dependencies/Client.
+         Private=false: the host provides these assemblies at runtime. -->
+    <ItemGroup>
+        <ServerSdkAssembly Include="..\Dependencies\Server\Host\*.dll;..\Dependencies\Server\SDK\*.dll" />
+        <Reference Include="@(ServerSdkAssembly)">
+            <Private>false</Private>
+        </Reference>
+        <Analyzer Include="..\Dependencies\Client\ReadyM.Api.Generators.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ExampleMod.Common\ExampleMod.Common.csproj" />
+    </ItemGroup>
+
+</Project>

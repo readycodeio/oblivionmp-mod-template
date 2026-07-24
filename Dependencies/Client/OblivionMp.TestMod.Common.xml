@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OblivionMp.TestMod.Common</name>
+    </assembly>
+    <members>
+        <member name="T:OblivionMp.TestMod.Common.ProfessionComponent.Fields">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.ProfessionComponent.ClearApiFlag">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.ProfessionComponent.ClearApiFlag(System.Int32)">
+            <exclude />
+        </member>
+        <member name="P:OblivionMp.TestMod.Common.ProfessionComponent.ChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.ProfessionComponent.MarkChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.ProfessionComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.ProfessionComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.ProfessionComponent.ClearDirty">
+            <exclude />
+        </member>
+        <member name="P:OblivionMp.TestMod.Common.ProfessionComponent.IsDirty">
+            <exclude />
+        </member>
+        <member name="T:OblivionMp.TestMod.Common.WalletComponent.Fields">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.WalletComponent.ClearApiFlag">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.WalletComponent.ClearApiFlag(System.Int32)">
+            <exclude />
+        </member>
+        <member name="P:OblivionMp.TestMod.Common.WalletComponent.ChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.WalletComponent.MarkChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.WalletComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.WalletComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:OblivionMp.TestMod.Common.WalletComponent.ClearDirty">
+            <exclude />
+        </member>
+        <member name="P:OblivionMp.TestMod.Common.WalletComponent.IsDirty">
+            <exclude />
+        </member>
+        <member name="T:OblivionMp.TestMod.Common.ServerRpcManifest">
+            <summary>
+            Single source of truth for server RPC code assignment in this mod.
+            Referenced by both the server handler and client event generators.
+            Set <see cref="P:OblivionMp.TestMod.Common.ServerRpcManifest.Offset"/> once at mod startup before any InitRpc() runs:
+            <code>
+              ServerRpcManifest.Offset = offsetProvider.GetNextOffset(ServerRpcManifest.TotalEventCount);
+            </code>
+            </summary>
+        </member>
+    </members>
+</doc>

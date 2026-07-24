@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReadyM.Utils.Async</name>
+    </assembly>
+    <members>
+        <member name="T:ReadyM.Utils.Async.PumpAwaitable">
+            <summary>Awaitable returned by <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Yield(System.Threading.CancellationToken)"/>. Awaiting it yields until
+            the next pump and resumes on the pump thread.</summary>
+        </member>
+        <member name="T:ReadyM.Utils.Async.PumpAwaiter">
+            <summary>Awaiter for <see cref="T:ReadyM.Utils.Async.PumpAwaitable"/>. Always suspends exactly once and resumes the continuation
+            on the next pump, directly on the pump thread. Resumption is scheduled straight onto the context (not via
+            the ambient <see cref="T:System.Threading.SynchronizationContext"/>), so a method that only awaits
+            <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Yield(System.Threading.CancellationToken)"/> is pump-thread-bound regardless of any
+            SynchronizationContext-capture subtlety.</summary>
+        </member>
+        <member name="T:ReadyM.Utils.Async.PumpedSynchronizationContext">
+             <summary>
+             A single-threaded <see cref="T:System.Threading.SynchronizationContext"/> whose queued continuations run only when the owner
+             calls <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Pump"/>, on the pumping thread. This lets <c>async</c>/<c>await</c> code run entirely on a
+             caller-owned thread that is advanced cooperatively, instead of on the thread pool. It is thread-agnostic:
+             the "pump thread" is simply whichever thread calls <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Pump"/> (a game loop, a worker, a test), and
+             an application may create several independent contexts for different purposes.
+            
+             Grounded in well-documented references (single-threaded SynchronizationContexts are famously easy to get
+             wrong):
+               - Stephen Toub, "Await, SynchronizationContext, and Console Apps" (the canonical single-threaded pump).
+               - Microsoft.VisualStudio.Threading's SingleThreadedSynchronizationContext.
+               - The System.Threading.SynchronizationContext docs.
+             Unlike Toub's blocking RunOnCurrentThread loop, <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Pump"/> is NON-blocking: it drains the work
+             queued so far and returns, so the host stays in control of its loop.
+             </summary>
+        </member>
+        <member name="P:ReadyM.Utils.Async.PumpedSynchronizationContext.PumpThreadId">
+            <summary>The managed thread id continuations run on (0 until the first <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Start(System.Action)"/>/<see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Pump"/>).</summary>
+        </member>
+        <member name="P:ReadyM.Utils.Async.PumpedSynchronizationContext.HasPendingWork">
+            <summary>Whether any continuations are currently queued.</summary>
+        </member>
+        <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Post(System.Threading.SendOrPostCallback,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Send(System.Threading.SendOrPostCallback,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.CreateCopy">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Start(System.Action)">
+            <summary>
+            Runs <paramref name="action"/> on the calling (pump) thread with this context installed as
+            <see cref="P:System.Threading.SynchronizationContext.Current"/>. Use it to START an async method so its pre-await body and
+            its captured continuations bind to this context. Must be called from the thread that will pump.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Pump">
+            <summary>
+            Drains the continuations queued AS OF entry, on the calling thread, with this context installed as
+            Current (so nested awaits re-capture it). Work queued DURING the pump waits for the next pump, so a
+            continuation that re-queues itself cannot starve the caller within a single tick. A continuation that
+            throws is logged and dropped (the pump keeps draining and stays alive); it is never swallowed silently.
+            Returns the number of continuations executed.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Yield(System.Threading.CancellationToken)">
+            <summary>
+            Suspends the awaiting async method until the next <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Pump"/>, resuming ON THE PUMP THREAD. If
+            <paramref name="cancellationToken"/> is cancelled, resumption throws <see cref="T:System.OperationCanceledException"/>
+            (still on the pump thread, so the method's finally/using run there).
+            </summary>
+        </member>
+        <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.WaitPumps(System.Int32,System.Threading.CancellationToken)">
+            <summary>Suspends for <paramref name="pumps"/> pump cycles.</summary>
+        </member>
+    </members>
+</doc>

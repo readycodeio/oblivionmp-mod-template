@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReadyM.Modloader</name>
+    </assembly>
+    <members>
+        <member name="P:ReadyM.Modloader.Mods.ICSharpMod.Name">
+            <summary>
+            The mod name
+            </summary>
+        </member>
+        <member name="M:ReadyM.Modloader.Mods.ICSharpMod.Init(ReadyM.Api.DI.IDependencyContainer)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Modloader.Mods.ICSharpMod.DeInit">
+            <summary>
+            Called when mod is unloaded, before the game exits, or before mod reloading.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Modloader.Mods.ICSharpMod.Start">
+            <summary>
+            Called after all mods have called RegisterServices.
+            </summary>
+        </member>
+        <member name="T:ReadyM.Modloader.Mods.ModSystemBase">
+            Base class for plugin systems. Adds itself to the update loop on creation and removes itself on disposal.
+        </member>
+        <member name="F:ReadyM.Modloader.Mods.ModSystemBase.UpdateTick.deltaTime">
+            <summary> The time in seconds since the last tick. </summary>
+        </member>
+        <member name="F:ReadyM.Modloader.Mods.ModSystemBase.UpdateTick.time">
+            <summary> The time at the beginning of the current frame since application start. </summary>
+        </member>
+    </members>
+</doc>

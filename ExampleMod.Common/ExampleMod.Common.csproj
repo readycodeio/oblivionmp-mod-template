@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <!-- Shared code for both mods. Private=false: the host provides these assemblies at runtime. -->
+    <ItemGroup>
+        <Reference Include="..\Dependencies\Client\ReadyM.Api.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Client\ReadyM.Api.Multiplayer.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Client\Friflo.Engine.ECS.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Client\LiteNetLib.dll">
+            <Private>false</Private>
+        </Reference>
+        <Analyzer Include="..\Dependencies\Client\ReadyM.Api.Generators.dll" />
+    </ItemGroup>
+
+</Project>
