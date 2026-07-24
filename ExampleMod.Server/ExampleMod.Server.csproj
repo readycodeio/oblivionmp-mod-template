@@ -6,14 +6,32 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <!-- References the host runtime and server SDK. The generator lives under Dependencies/Client.
-         Private=false: the host provides these assemblies at runtime. -->
+    <!-- Reference only the DLLs this mod actually needs. Pulling in the whole SDK folder makes the
+         compiler record references the server host can't all satisfy at load time, which makes the
+         mod loader silently skip the mod. Private=false: the host provides these at runtime. -->
     <ItemGroup>
-        <ServerSdkAssembly Include="..\Dependencies\Server\Host\*.dll;..\Dependencies\Server\SDK\*.dll" />
-        <Reference Include="@(ServerSdkAssembly)">
+        <Reference Include="..\Dependencies\Server\SDK\OblivionMp.Sdk.Serverside.dll">
             <Private>false</Private>
         </Reference>
-        <Analyzer Include="..\Dependencies\Client\ReadyM.Api.Generators.dll" />
+        <Reference Include="..\Dependencies\Server\Host\ReadyM.Relay.Server.Sdk.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Server\Host\ReadyM.Api.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Server\Host\ReadyM.Api.Multiplayer.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Server\Host\Friflo.Engine.ECS.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Server\Host\LiteNetLib.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Server\Host\Microsoft.Extensions.Logging.Abstractions.dll">
+            <Private>false</Private>
+        </Reference>
+        <Analyzer Include="..\Dependencies\Server\Host\ReadyM.Api.Generators.dll" />
     </ItemGroup>
 
     <ItemGroup>

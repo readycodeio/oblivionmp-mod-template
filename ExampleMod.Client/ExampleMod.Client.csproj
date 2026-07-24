@@ -6,12 +6,26 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <!-- References the whole client SDK. The generator is an Analyzer; example mods are excluded.
-         Private=false: the host provides these assemblies at runtime. -->
+    <!-- Reference only the DLLs this mod actually needs. Pulling in the whole SDK folder makes the
+         compiler record references the game client can't all satisfy at load time, which makes the
+         mod loader silently skip the mod. Private=false: the host provides these at runtime. -->
     <ItemGroup>
-        <ClientSdkAssembly Include="..\Dependencies\Client\*.dll"
-                           Exclude="..\Dependencies\Client\ReadyM.Api.Generators.dll;..\Dependencies\Client\OblivionMp.TestMod*.dll;..\Dependencies\Client\OblivionMpCSharpMod.dll" />
-        <Reference Include="@(ClientSdkAssembly)">
+        <Reference Include="..\Dependencies\Client\OblivionMp.Sdk.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Client\ReadyM.Sdk.Common.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Client\ReadyM.Api.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Client\ReadyM.Api.Multiplayer.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Client\Friflo.Engine.ECS.dll">
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="..\Dependencies\Client\LiteNetLib.dll">
             <Private>false</Private>
         </Reference>
         <Analyzer Include="..\Dependencies\Client\ReadyM.Api.Generators.dll" />
