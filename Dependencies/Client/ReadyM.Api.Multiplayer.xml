@@ -211,6 +211,12 @@
         <member name="M:ReadyM.Api.Multiplayer.ComponentWriteContext.EnterServerAuthoring">
             <summary>Enables auto-marking for the scope (restored on dispose).</summary>
         </member>
+        <member name="P:ReadyM.Api.Multiplayer.ECS.Components.AreaScopeComponent.AreaId">
+            <inheritdoc cref="F:ReadyM.Api.Multiplayer.ECS.Components.AreaScopeComponent._areaId"/>
+        </member>
+        <member name="P:ReadyM.Api.Multiplayer.ECS.Components.AreaScopeComponent.MasterClient">
+            <inheritdoc cref="F:ReadyM.Api.Multiplayer.ECS.Components.AreaScopeComponent._masterClient"/>
+        </member>
         <member name="T:ReadyM.Api.Multiplayer.ECS.Components.AreaScopeComponent.Fields">
             <exclude />
         </member>
@@ -237,6 +243,12 @@
         </member>
         <member name="P:ReadyM.Api.Multiplayer.ECS.Components.AreaScopeComponent.IsDirty">
             <exclude />
+        </member>
+        <member name="P:ReadyM.Api.Multiplayer.ECS.Components.CellScopeComponent.FullCellId">
+            <inheritdoc cref="F:ReadyM.Api.Multiplayer.ECS.Components.CellScopeComponent._fullCellId"/>
+        </member>
+        <member name="P:ReadyM.Api.Multiplayer.ECS.Components.CellScopeComponent.MasterClient">
+            <inheritdoc cref="F:ReadyM.Api.Multiplayer.ECS.Components.CellScopeComponent._masterClient"/>
         </member>
         <member name="T:ReadyM.Api.Multiplayer.ECS.Components.CellScopeComponent.Fields">
             <exclude />
@@ -275,6 +287,9 @@
             Setting this flag to false on a scope that has no players in it won't cause the scope to be deleted until one or more players join it
             and then all players leave it again.
             </summary>
+        </member>
+        <member name="P:ReadyM.Api.Multiplayer.ECS.Components.EmptyScopeDeletionComponent.DoNotDeleteWhenAllPlayersLeave">
+            <inheritdoc cref="F:ReadyM.Api.Multiplayer.ECS.Components.EmptyScopeDeletionComponent._doNotDeleteWhenAllPlayersLeave"/>
         </member>
         <member name="T:ReadyM.Api.Multiplayer.ECS.Components.EmptyScopeDeletionComponent.Fields">
             <exclude />
@@ -321,6 +336,9 @@
             single index, and <see cref="T:ReadyM.Api.Multiplayer.ECS.Components.CellScopeComponent"/> already indexes cells by <see cref="P:ReadyM.Api.Multiplayer.ECS.Components.CellScopeComponent.FullCellId"/>.
             This link enables querying all cells belonging to a given area in O(1) time, given the area's scope entity.
             </summary>
+        </member>
+        <member name="P:ReadyM.Api.Multiplayer.ECS.Components.PlayerScopeComponent.PlayerId">
+            <inheritdoc cref="F:ReadyM.Api.Multiplayer.ECS.Components.PlayerScopeComponent._playerId"/>
         </member>
         <member name="T:ReadyM.Api.Multiplayer.ECS.Components.PlayerScopeComponent.Fields">
             <exclude />

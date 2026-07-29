@@ -18,6 +18,9 @@
             Returns the component ID to use in all subsequent <c>Query</c> calls.
             </summary>
         </member>
+        <member name="M:ReadyM.Relay.Server.Sdk.Ecs.Components.IComponentRegistry.RegisterComponent``1">
+            <inheritdoc cref="M:ReadyM.Relay.Server.Sdk.Ecs.Components.IComponentRegistry.RegisterLocalComponent``1"/>
+        </member>
         <member name="T:ReadyM.Relay.Server.Sdk.Ecs.EcsApi">
             <summary>
             Mod-side ECS API. Wraps the function pointers exposed by the AOT server.

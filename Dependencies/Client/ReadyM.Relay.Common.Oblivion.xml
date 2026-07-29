@@ -9,6 +9,105 @@
             Holds the player character's movement and animation data.
             </summary>
         </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.ActorRotation">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._actorRotation"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.ControlRotation">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._controlRotation"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.DirectionalAxis">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._directionalAxis"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.DirectionalAxisLength">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._directionalAxisLength"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.ControlInputVector">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._controlInputVector"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.LastControlInputVector">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._lastControlInputVector"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.TurnInPlaceAngleThreshold">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._turnInPlaceAngleThreshold"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.ActorForwardPoseOffset">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._actorForwardPoseOffset"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.LookAtPoint">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._lookAtPoint"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.YawRotationDelta">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._yawRotationDelta"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.RotationRate">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._rotationRate"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.AnalogInputModifier">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._analogInputModifier"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.Velocity">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._velocity"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.Acceleration">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._acceleration"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.CurrentOrientationAngle">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._currentOrientationAngle"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.StartPoseAlpha">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._startPoseAlpha"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.LeanPoseAlpha">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._leanPoseAlpha"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.LeanVertical">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._leanVertical"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.LeanHorizontal">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._leanHorizontal"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.UpperBodyAngle">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._upperBodyAngle"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.HorizontalSpeed">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._horizontalSpeed"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.VerticalSpeed">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._verticalSpeed"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.StrideScale">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._strideScale"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.ClampedAxis">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._clampedAxis"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.MinMaxForwardAngle">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._minMaxForwardAngle"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.MinMaxBackwardAngle">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._minMaxBackwardAngle"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.CombatLeanVertical">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._combatLeanVertical"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.CombatLeanHorizontal">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._combatLeanHorizontal"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.StrideDirection">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._strideDirection"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.StandingLocomotionPlayRate">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._standingLocomotionPlayRate"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.StandingLocomotionSpeed">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._standingLocomotionSpeed"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.SneakingLocomotionPlayRate">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._sneakingLocomotionPlayRate"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.SneakingLocomotionSpeed">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._sneakingLocomotionSpeed"/>
+        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.Fields">
             <exclude />
         </member>
@@ -46,8 +145,35 @@
             Holds the player character's animation state.
             </summary>
         </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.InCombatStance">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._inCombatStance"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CurrentAnimAction">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._currentAnimAction"/>
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.AnimActionSamples_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample})">
             <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ComboHitIndex">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._comboHitIndex"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.WeaponDrawn">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._weaponDrawn"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CompWeaponDrawn">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._compWeaponDrawn"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CharacterStateFlags">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._characterStateFlags"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.WantsToRun">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._wantsToRun"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.UseControllerRotationYaw">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._useControllerRotationYaw"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.UseRotationSpeedCurve">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._useRotationSpeedCurve"/>
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.GameplayTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
             <exclude />
@@ -67,6 +193,27 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentLastAnimTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
             <exclude />
         </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.OrientRotationToMovement">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._orientRotationToMovement"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.UseControllerDesiredRotation">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._useControllerDesiredRotation"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CurrentGait">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._currentGait"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.IsMoving">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._isMoving"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CanUseOrientationWarping">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._canUseOrientationWarping"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.IsStartCompleted">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._isStartCompleted"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CanFootLock">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._canFootLock"/>
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.AttackingTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
             <exclude />
         </member>
@@ -85,11 +232,80 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentEquipUnequipTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
             <exclude />
         </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.AttackingRequest">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._attackingRequest"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CastingRequest">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._castingRequest"/>
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CastingRequestSamples_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample})">
             <exclude />
         </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.RecoilingRequest">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._recoilingRequest"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.DodgingRequest">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._dodgingRequest"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.AnimIsStaggered">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._animIsStaggered"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CanExitBlock">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._canExitBlock"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CanExitAttack">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._canExitAttack"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.IsUsingFullBody">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._isUsingFullBody"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ForceExitEquip">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._forceExitEquip"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.SpellCastAnimLayerClassName">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._spellCastAnimLayerClassName"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.BlockAnimLayerClassName">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._blockAnimLayerClassName"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.RecoilAnimLayerClassName">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._recoilAnimLayerClassName"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.StaggerAnimLayerClassName">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._staggerAnimLayerClassName"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.DodgeAnimLayerClassName">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._dodgeAnimLayerClassName"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.GetUpAnimLayerClassName">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._getUpAnimLayerClassName"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.InAirAnimLayerClassName">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._inAirAnimLayerClassName"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.TorchAnimLayerClassName">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._torchAnimLayerClassName"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ShieldHandPoseAnimLayerClassName">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._shieldHandPoseAnimLayerClassName"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.HasMeleeWeapon">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._hasMeleeWeapon"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.MeleeSequenceName">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._meleeSequenceName"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.MeleePlayRate">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._meleePlayRate"/>
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.MeleeMontageSamples_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample})">
             <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.MontageName">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._montageName"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.MontagePosition">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._montagePosition"/>
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.Fields">
             <exclude />
@@ -128,6 +344,54 @@
             Holds the player character's appearance settings.
             </summary>
         </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.Sex">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._sex"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.RacePath">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._racePath"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.EyeMaterialPath">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._eyeMaterialPath"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.FaceMorphsSourcePath">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._faceMorphsSourcePath"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.FaceBaseMeshPath">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._faceBaseMeshPath"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.SkinParameterDefinitionsPath">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._skinParameterDefinitionsPath"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.HairPath">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._hairPath"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.EyebrowsPath">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._eyebrowsPath"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.MustachePath">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._mustachePath"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.BeardPath">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._beardPath"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.SenescenceLevel">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._senescenceLevel"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.CustomisationEyeMaterialIndex">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._customisationEyeMaterialIndex"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.CustomisationHairIndex">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._customisationHairIndex"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.CustomisationEyebrowsIndex">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._customisationEyebrowsIndex"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.CustomisationMustacheIndex">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._customisationMustacheIndex"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.CustomisationBeardIndex">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._customisationBeardIndex"/>
+        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.Fields">
             <exclude />
         </member>
@@ -159,6 +423,9 @@
             <summary>
             Holds an Oblivion actor's Base ID.
             </summary>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.BaseId">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent._baseId"/>
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.Fields">
             <exclude />
@@ -360,6 +627,9 @@
             Holds the player's ID.
             </summary>
         </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.PlayerId">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent._playerId"/>
+        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.Fields">
             <exclude />
         </member>
@@ -391,6 +661,9 @@
             <summary>
             Holds the player's nickname.
             </summary>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent.Nickname">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent._nickname"/>
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent.Fields">
             <exclude />
@@ -424,6 +697,15 @@
             Holds the player character's parent cell information.
             </summary>
         </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.IsExterior">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent._isExterior"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.X">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent._x"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.Y">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent._y"/>
+        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.Fields">
             <exclude />
         </member>
@@ -455,6 +737,12 @@
             <summary>
             Holds the player character's activity flags.
             </summary>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.InCombat">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent._inCombat"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.InDialogue">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent._inDialogue"/>
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.Fields">
             <exclude />
@@ -517,6 +805,12 @@
             <summary>
             Holds the player character's quiver information.
             </summary>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.HasQuiver">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent._hasQuiver"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.ArrowCount">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent._arrowCount"/>
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.Fields">
             <exclude />
@@ -624,6 +918,9 @@
             Holds the number of items in a dropped item stack.
             </summary>
         </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent.Count">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent._count"/>
+        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent.Fields">
             <exclude />
         </member>
@@ -655,6 +952,15 @@
             <summary>
             Holds the global time state of the game world.
             </summary>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.GameHour">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent._gameHour"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.GameDaysPassed">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent._gameDaysPassed"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.TimeScale">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent._timeScale"/>
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.Fields">
             <exclude />
@@ -688,6 +994,17 @@
             Holds an entity's position and rotation in the world.
             </summary>
         </member>
+        <member name="F:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent._rotation">
+            <summary>
+            Rotation around the vertical axis (yaw) in degrees.
+            </summary>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent.Position">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent._position"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent.Rotation">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent._rotation"/>
+        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent.Fields">
             <exclude />
         </member>
@@ -720,6 +1037,27 @@
             Holds the player character's vital attributes.
             </summary>
         </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.Hp">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent._hp"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.Magicka">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent._magicka"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.Fatigue">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent._fatigue"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.HpBase">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent._hpBase"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.MagickaBase">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent._magickaBase"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.FatigueBase">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent._fatigueBase"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.IsDead">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent._isDead"/>
+        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.Fields">
             <exclude />
         </member>
@@ -751,6 +1089,12 @@
             <summary>
             Holds the global weather state of the game world.
             </summary>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.WeatherFormId">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent._weatherFormId"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.TransitionRatio">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent._transitionRatio"/>
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.Fields">
             <exclude />
