@@ -15,7 +15,7 @@ public class PassiveIncomeSystem(EcsApi ecsApi) : ModSystemBase
 
     protected override void OnUpdate(UpdateTick tick)
     {
-        _elapsed += tick.deltaTime;
+        _elapsed += tick.DeltaTime;
         if (_elapsed < IntervalSeconds) return;
 
         _elapsed -= IntervalSeconds;

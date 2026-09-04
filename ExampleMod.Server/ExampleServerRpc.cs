@@ -1,5 +1,6 @@
 using ExampleMod.Common;
 using Microsoft.Extensions.Logging;
+using ReadyM.Api.Multiplayer;
 using ReadyM.Api.Multiplayer.ECS.Components;
 using ReadyM.Relay.Server.Sdk.Ecs;
 using ReadyM.Relay.Server.Sdk.Rpc;
@@ -9,6 +10,7 @@ namespace ExampleMod.Server;
 // Server side of the server-RPC contracts. Implement the [ClientToServer] handlers; the
 // [ServerToClient] Send methods are generated. Each handler gets an RpcContext with the sender.
 // Register in Mod.Init.
+[ServerRpcFor(typeof(RpcContracts))]
 public partial class ExampleServerRpc(EcsApi ecsApi, ILogger logger) : ServerRpcHandlersBase
 {
     // Credit the sender's wallet and reply with the amount added.

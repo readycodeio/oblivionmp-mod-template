@@ -80,11 +80,39 @@
             Each mod should have exactly one class extending from this, which will be instantiated by the mod loader.
             </summary>
         </member>
+        <member name="P:ReadyM.Sdk.Common.ModBase.ModDirectory">
+            <summary>
+            This mod's own folder under the mods directory, which holds its assemblies, manifest and any
+            config files.
+            </summary>
+        </member>
         <member name="P:ReadyM.Sdk.Common.ModBase.IsDebug">
             <summary>
             Indicates whether the mod is running in a debug build.
             Can be used to enable debug-only features or logging.
             </summary>
+        </member>
+        <member name="M:ReadyM.Sdk.Common.ModBase.SetModDirectory(System.String)">
+            <summary>
+            Called by the mod loader, before <see cref="M:ReadyM.Sdk.Common.ModBase.Init(ReadyM.Api.DI.IDependencyContainer)" />.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Sdk.Common.ModBase.RegisterConfig``1(System.String)">
+            <summary>
+            Reads <paramref name="fileName"/> from this mod's folder and registers the result as a singleton,
+            so other classes can take it as a constructor parameter. Opt in by calling this; nothing is read
+            or written for a mod that does not.
+            </summary>
+            <remarks>
+            A missing file yields defaults. A file that exists but does not parse, or that carries a key the
+            config type does not declare, throws <see cref="T:ReadyM.Api.Loader.ModConfigException" />.
+            </remarks>
+        </member>
+        <member name="M:ReadyM.Sdk.Common.ModBase.RegisterArchetypes(System.Action{ReadyM.Api.ECS.Worlds.IArchetypeRegistry})">
+            <summary>
+            Register new archetypes or modify existing ones.
+            </summary>
+            <param name="configure">Runs once while the ECS schema is built.</param>
         </member>
         <member name="M:ReadyM.Sdk.Common.ModBase.DeInit">
             <summary>

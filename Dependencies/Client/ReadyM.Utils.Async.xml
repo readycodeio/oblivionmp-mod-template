@@ -32,6 +32,23 @@
              queued so far and returns, so the host stays in control of its loop.
              </summary>
         </member>
+        <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.#ctor(Microsoft.Extensions.Logging.ILogger)">
+             <summary>
+             A single-threaded <see cref="T:System.Threading.SynchronizationContext"/> whose queued continuations run only when the owner
+             calls <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Pump"/>, on the pumping thread. This lets <c>async</c>/<c>await</c> code run entirely on a
+             caller-owned thread that is advanced cooperatively, instead of on the thread pool. It is thread-agnostic:
+             the "pump thread" is simply whichever thread calls <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Pump"/> (a game loop, a worker, a test), and
+             an application may create several independent contexts for different purposes.
+            
+             Grounded in well-documented references (single-threaded SynchronizationContexts are famously easy to get
+             wrong):
+               - Stephen Toub, "Await, SynchronizationContext, and Console Apps" (the canonical single-threaded pump).
+               - Microsoft.VisualStudio.Threading's SingleThreadedSynchronizationContext.
+               - The System.Threading.SynchronizationContext docs.
+             Unlike Toub's blocking RunOnCurrentThread loop, <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Pump"/> is NON-blocking: it drains the work
+             queued so far and returns, so the host stays in control of its loop.
+             </summary>
+        </member>
         <member name="P:ReadyM.Utils.Async.PumpedSynchronizationContext.PumpThreadId">
             <summary>The managed thread id continuations run on (0 until the first <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Start(System.Action)"/>/<see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Pump"/>).</summary>
         </member>
@@ -40,6 +57,12 @@
         </member>
         <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Post(System.Threading.SendOrPostCallback,System.Object)">
             <inheritdoc/>
+        </member>
+        <member name="P:ReadyM.Utils.Async.PumpedSynchronizationContext.SendTimeout">
+            <summary>
+            Upper bound for how long a cross-thread <see cref="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Send(System.Threading.SendOrPostCallback,System.Object)"/> waits for the pump to run its callback.
+            Hitting it means the pump stopped draining; without a bound the caller would block forever.
+            </summary>
         </member>
         <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Send(System.Threading.SendOrPostCallback,System.Object)">
             <inheritdoc/>
@@ -52,6 +75,13 @@
             Runs <paramref name="action"/> on the calling (pump) thread with this context installed as
             <see cref="P:System.Threading.SynchronizationContext.Current"/>. Use it to START an async method so its pre-await body and
             its captured continuations bind to this context. Must be called from the thread that will pump.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.BindPumpThread">
+            <summary>
+            Claims the calling thread as the single pumper, or throws if another thread already owns it. The
+            single-pumper rule is what makes "continuations run on the pump thread" a guarantee rather than a
+            convention, so a second pumper is an error rather than a silent transfer of ownership.
             </summary>
         </member>
         <member name="M:ReadyM.Utils.Async.PumpedSynchronizationContext.Pump">

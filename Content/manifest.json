@@ -4,10 +4,11 @@
   "name": "CHANGE ME",
   "author": "CHANGE ME",
   "description": "CHANGE ME",
+  "link": "CHANGE ME",
   "dependencies": [
     {
-      "uniqueId": "OblivionMp.Sdk",
-      "minimumVersion": "0.1.0"
+      "uniqueId": "OblivionMP.SDK",
+      "minimumVersion": "0.2.0"
     }
   ]
 }

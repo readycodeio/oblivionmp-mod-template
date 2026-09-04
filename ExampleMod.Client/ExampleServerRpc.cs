@@ -1,12 +1,14 @@
 using ExampleMod.Common;
 using Microsoft.Extensions.Logging;
 using OblivionMp.Sdk;
+using ReadyM.Api.Multiplayer;
 using ReadyM.Api.Multiplayer.RPC;
 
 namespace ExampleMod.Client;
 
 // Client side of the server-RPC contracts. Implement the [ServerToClient] handlers; the
 // [ClientToServer] Send methods are generated. Register in Mod.RegisterServices.
+[ServerRpcFor(typeof(RpcContracts))]
 public partial class ExampleServerRpc(ILogger logger) : ServerRpcClient
 {
     partial void OnAddWalletBalance(int amount)

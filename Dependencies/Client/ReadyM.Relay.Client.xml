@@ -16,11 +16,44 @@
             that the update loop tick will be called externally from the game code, on the appropriate thread.
             </summary>
         </member>
+        <member name="F:ReadyM.Relay.Client.RelayClient.ExpectedStallDisconnectTimeoutMs">
+            <summary>How long a stall is tolerated while one is expected. Bounded, so a transition that
+            never finishes still gets noticed, just later than usual.</summary>
+        </member>
+        <member name="F:ReadyM.Relay.Client.RelayClient._restoreDisconnectTimeoutPending">
+            Set from the user thread, read by the network loop.
+        </member>
+        <member name="M:ReadyM.Relay.Client.RelayClient.BeginExpectedStall">
+            <summary>
+            Raises the disconnect timeout while a known stall is in flight, so the stall does not count
+            against it. Paired with <see cref="M:ReadyM.Relay.Client.RelayClient.EndExpectedStall" />.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Relay.Client.RelayClient.EndExpectedStall">
+            <summary>
+            Ends the window opened by <see cref="M:ReadyM.Relay.Client.RelayClient.BeginExpectedStall" />.
+            </summary>
+        </member>
+        <member name="P:ReadyM.Relay.Client.RelayClient.PacketLossPercent">
+            <inheritdoc />
+        </member>
         <member name="M:ReadyM.Relay.Client.Shim.ECS.ShimEcsDependencyData.TextSerialize(System.Text.Json.Utf8JsonWriter,ReadyM.Relay.Client.Shim.ECS.ShimEcsDependencyData,System.Text.Json.JsonSerializerOptions)">
             <exclude />
         </member>
         <member name="P:ReadyM.Relay.Client.State.ClientState.CellEntry.CellPlayers">
             <summary>Players for whom this cell is considered active.</summary>
+        </member>
+        <member name="E:ReadyM.Relay.Client.State.ClientState.OnActivatedCell">
+            <summary>
+            Fired when a cell is activated for a player.
+            FullCellId along with the Entity represents the cell, boolean indicates if the local player is the master of that cell.
+            </summary>
+        </member>
+        <member name="E:ReadyM.Relay.Client.State.ClientState.OnDeactivatedCell">
+            <summary>
+            Fired when a cell is deactivated for a player.
+            FullCellId along with the Entity represents the cell, boolean indicates if the local player was the master of that cell.
+            </summary>
         </member>
         <member name="M:ReadyM.Relay.Client.State.ClientState.PrunePendingEvents">
             <summary>

@@ -6,7 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <!-- Shared code for both mods. Private=false: the host provides these assemblies at runtime. -->
+    <!-- Shared code for both halves, so it may only use assemblies both hosts provide. These are
+         byte-identical in Dependencies/Client and Dependencies/Server; Client is just the one we
+         point at. Private=false: the host provides them at runtime. -->
     <ItemGroup>
         <Reference Include="..\Dependencies\Client\ReadyM.Api.dll">
             <Private>false</Private>
@@ -17,10 +19,13 @@
         <Reference Include="..\Dependencies\Client\Friflo.Engine.ECS.dll">
             <Private>false</Private>
         </Reference>
-        <Reference Include="..\Dependencies\Client\LiteNetLib.dll">
-            <Private>false</Private>
-        </Reference>
         <Analyzer Include="..\Dependencies\Client\ReadyM.Api.Generators.dll" />
+    </ItemGroup>
+
+    <!-- Generated component serialization uses LiteNetLib's readers and writers. ExcludeAssets
+         keeps it out of the build output: the host loads its own copy. -->
+    <ItemGroup>
+        <PackageReference Include="LiteNetLib" Version="1.3.5" ExcludeAssets="runtime" />
     </ItemGroup>
 
 </Project>

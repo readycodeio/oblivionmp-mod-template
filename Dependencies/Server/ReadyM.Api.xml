@@ -40,10 +40,20 @@
         <member name="M:ReadyM.Api.Attributes.SkipNativeAccessMethodsForAttribute.#ctor(System.Type,System.String)">
             <exclude />
         </member>
+        <member name="T:ReadyM.Api.Compat.DictionaryExtensions">
+            <exclude/>
+        </member>
         <member name="T:ReadyM.Api.DI.IDependencyContainer">
             <summary>
             Dependency injection container interface for registering and resolving services.
             </summary>
+            <remarks>
+            Registrations are additive by default, so several mods can each contribute an
+            implementation of the same service and all of them are returned by
+            <see cref="M:ReadyM.Api.DI.IDependencyContainer.ResolveAll``1"/>. Pass <c>replace: true</c> to take over a service
+            another mod or the SDK already registered, which drops every existing
+            registration of that service type.
+            </remarks>
         </member>
         <member name="T:ReadyM.Api.DI.IHostedService">
             <summary>
@@ -54,23 +64,87 @@
         </member>
         <member name="M:ReadyM.Api.DI.IHostedService.OnScopeStart">
             <summary>
-            Called when the DI container is initialized (on game start).
+            Called when the DI container is initialized (on game/server start).
             This allows the service to perform any necessary setup at the appropriate time, such as registering event handlers.
+            </summary>
+        </member>
+        <member name="T:ReadyM.Api.ECS.Components.INativeInit">
+            <summary>
+            Interface for components that require native initialization, such as allocating unmanaged resources or setting up internal state.
             </summary>
         </member>
         <member name="T:ReadyM.Api.ECS.Managers.IEntityDeleteImpl">
             <exclude />
         </member>
+        <member name="T:ReadyM.Api.ECS.Worlds.ArchetypeBuilder">
+            <summary>
+            Builder class for creating archetypes in the ECS (Entity Component System) framework.
+            It allows adding components, tags, and custom filters to define the structure of an archetype.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Api.ECS.Worlds.ArchetypeBuilder.Add(System.Type)">
+            <summary>
+            Adds a component type to the archetype builder. The component type must be a value type and implement the <see cref="T:Friflo.Engine.ECS.IComponent"/> interface.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Api.ECS.Worlds.ArchetypeBuilder.Add``1">
+            <summary>
+            Adds a component of type T to the archetype builder. The component type must be a value type and implement the <see cref="T:Friflo.Engine.ECS.IComponent"/> interface.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Api.ECS.Worlds.ArchetypeBuilder.Add``1(``0)">
+            <summary>
+            Adds a component of type T with a specific instance to the archetype builder. The component type must be a value type and implement the <see cref="T:Friflo.Engine.ECS.IComponent"/> interface.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Api.ECS.Worlds.ArchetypeBuilder.Add(System.Int32,System.Int32)">
+            <summary>
+            Adds a component to the archetype builder using a struct index and stride.
+            This is useful for components that are not known at compile time and are defined by their memory layout.
+            </summary>
+        </member>
+        <member name="T:ReadyM.Api.ECS.Worlds.IArchetypeRegistry">
+            <summary>
+            Allows registering and modifying entity archetypes in the ECS.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Api.ECS.Worlds.IArchetypeRegistry.RegisterArchetype(ReadyM.Api.ECS.Worlds.ArchetypeBuilder)">
+            <summary>
+            Registers a new entity archetype with the configured components.
+            </summary>
+            <param name="builder">The archetype builder with the configured components.</param>
+            <returns>The identifier of the defined archetype.</returns>
+        </member>
+        <member name="M:ReadyM.Api.ECS.Worlds.IArchetypeRegistry.ModifyArchetype(ReadyM.Api.Idents.ArchetypeId,System.Action{ReadyM.Api.ECS.Worlds.ArchetypeBuilder})">
+            <summary>
+            Extends an existing entity archetype with additional components.
+            </summary>
+            <param name="archetypeId">The identifier of the archetype to modify.</param>
+            <param name="callback">This callback will be invoked immediately to modify the existing registered archetype
+            builder. It is NOT invoked on each call</param>
+        </member>
+        <member name="F:ReadyM.Api.ECS.Worlds.Store._modPostCreateInit">
+            <summary>
+            Runs native init for components the mod host owns. Those are registered here as opaque stride components, so
+            <see cref="T:ReadyM.Api.ECS.Worlds.Store.NativeInitCallback"/> cannot see them and the mod side has to do it. Null when no mod host is
+            attached, which is always the case on the client.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Api.ECS.Worlds.Store.SetModPostCreateInit(System.Action{ReadyM.Api.Idents.ArchetypeId,System.Int32})">
+            <summary>
+            Registers the mod host's native init hook. Called once during mod host initialisation.
+            </summary>
+        </member>
         <member name="M:ReadyM.Api.ECS.Worlds.Store.ComponentIndex``2">
             <summary>
             Returns the index for indexed components to search entities with a specific component value in O(1).<br/>
-            Executes in O(1). 
+            Executes in O(1).
             </summary>
         </member>
         <member name="M:ReadyM.Api.ECS.Worlds.Store.LinkComponentIndex``1">
             <summary>
             Returns the index for link components to search entities with a specific entity in O(1).<br/>
-            Executes in O(1). 
+            Executes in O(1).
             </summary>
         </member>
         <member name="T:ReadyM.Api.Helpers.BiMap`2.Indexer`2">
@@ -85,6 +159,20 @@
             Deep copy lookup as a dictionary
             </summary>
             <returns></returns>
+        </member>
+        <member name="F:ReadyM.Api.Helpers.PendingActionScheduler`1.DefaultRunSynchronouslyTimeoutMs">
+            <summary>
+            Default upper bound (in milliseconds) for how long the <see cref="M:ReadyM.Api.Helpers.PendingActionScheduler`1.RunSynchronously(System.Action{`0},System.Int32)"/>
+            overloads wait for the scheduler thread to execute the scheduled action. Hitting this bound means the scheduler
+            stopped draining its queue, which would otherwise block the calling thread forever.
+            </summary>
+            <remarks>
+            Scheduler can end up never executing a task that was added to its queue due to an exception or a different kind of bug.
+            A finite time limit is the only way to make sure that this kind of issue, regardles of its exact cause, will always
+            end up throwing an exception eventually instead of blocking the waiting thread forever.
+            This is especially important for integration tests, which use different <see cref="M:ReadyM.Api.Helpers.PendingActionScheduler`1.RunSynchronously(System.Action{`0},System.Int32)"/>
+            overloads extensively and when the main test thread is blocked, a test gets stuck instead of failing.
+            </remarks>
         </member>
         <member name="T:ReadyM.Api.Idents.ArchetypeId">
             <summary>
@@ -114,6 +202,7 @@
             Identifies a cell within an area.
             <see cref="T:ReadyM.Api.Idents.CellId"/> has to be unique within its parent area (identified by <see cref="T:ReadyM.Api.Idents.AreaId"/>).
             The main difference between a cell and an area is that a player can be only in one area at once, but can have many cells active within that area.
+            <remarks>Cells are only used in OblivionMP for now. WukongMP does not use cells.</remarks>
             </summary>
         </member>
         <member name="F:ReadyM.Api.Idents.CellId._id">
@@ -134,6 +223,7 @@
             <remarks>
             This struct doesn't replace <see cref="P:ReadyM.Api.Idents.FullCellId.CellId"/>, because most of the time 
             <see cref="P:ReadyM.Api.Idents.FullCellId.AreaId"/> can be inferred from the context of which area is a given player in.
+            Cells are only used in OblivionMP for now. WukongMP does not use cells.
             </remarks>
         </member>
         <member name="M:ReadyM.Api.Idents.FullCellId.TextSerialize(System.Text.Json.Utf8JsonWriter,ReadyM.Api.Idents.FullCellId,System.Text.Json.JsonSerializerOptions)">
@@ -174,10 +264,91 @@
             Invokes the closure.
             <exception cref="T:System.NullReferenceException">When the closure function or context pointers are invalid.</exception>
         </member>
+        <member name="T:ReadyM.Api.Loader.ModConfigException">
+            <summary>Thrown when a mod's config file exists but cannot be used.</summary>
+        </member>
+        <member name="M:ReadyM.Api.Loader.ModConfigException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ReadyM.Api.Loader.ModConfigException.#ctor(System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="T:ReadyM.Api.Loader.ModConfigReader">
+            <summary>
+            Reads a mod's JSON config file out of its own package folder.
+            </summary>
+        </member>
+        <member name="P:ReadyM.Api.Loader.ModManifestSerializerContext.ModManifest">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:ReadyM.Api.Loader.ModManifestSerializerContext.ModDependency">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:ReadyM.Api.Loader.ModManifestSerializerContext.ListModDependency">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:ReadyM.Api.Loader.ModManifestSerializerContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:ReadyM.Api.Loader.ModManifestSerializerContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:ReadyM.Api.Loader.ModManifestSerializerContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Api.Loader.ModManifestSerializerContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReadyM.Api.Loader.ModManifestSerializerContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ReadyM.Api.Loader.ModManifestSerializerContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ReadyM.Api.Loader.ModPackage">
+            <summary>
+            A mod folder: <c>mods/&lt;name&gt;/</c> holding a manifest and a <c>client</c> and/or <c>server</c> subfolder.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Api.Loader.ModPackage.#ctor(System.String,ReadyM.Api.Loader.ModManifest)">
+            <summary>
+            A mod folder: <c>mods/&lt;name&gt;/</c> holding a manifest and a <c>client</c> and/or <c>server</c> subfolder.
+            </summary>
+        </member>
+        <member name="T:ReadyM.Api.Loader.ModPackageLocator">
+            <summary>
+            Finds mod packages under a mods directory and orders them so every mod loads after its dependencies.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Api.Loader.ModPackageLocator.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Finds mod packages under a mods directory and orders them so every mod loads after its dependencies.
+            </summary>
+        </member>
+        <member name="M:ReadyM.Api.Mapping.Data.ComponentFieldMappingRegistry.TryGetMapping``3(ReadyM.Api.Mapping.Data.Field{``0,``1,``2},System.Object@)">
+            <summary>
+            Looks up the registered mapping without committing to a shape. A field may be registered either as a
+            <see cref="T:ReadyM.Api.Mapping.Data.FieldMapping`3"/>, whose setter takes the field value alone, or as a
+            <see cref="T:ReadyM.Api.Mapping.Data.ComponentFieldMapping`3"/>, whose setter takes the whole component
+            so it can decide based on sibling fields. Callers must handle both.
+            </summary>
+        </member>
         <member name="T:ReadyM.Api.Mapping.Data.Field`2">
             <exclude />
         </member>
-        <member name="M:ReadyM.Api.Mapping.Data.Field`2.#ctor(System.Int32,System.Func{`0,`1},ReadyM.Api.Mapping.Data.FieldSetterDelegate{`0,`1},ReadyM.Api.Mapping.Data.FieldSetterDelegate{`0,`1},System.Func{`0,System.Boolean})">
+        <member name="M:ReadyM.Api.Mapping.Data.Field`2.#ctor(System.Int32,System.Func{`0,`1},ReadyM.Api.Mapping.Data.FieldSetterDelegate{`0,`1},ReadyM.Api.Mapping.Data.FieldSetterFromApiDelegate{`0,`1},System.Func{`0,System.Boolean})">
             <exclude />
         </member>
         <member name="T:ReadyM.Api.Mapping.Data.Field`3">
@@ -187,6 +358,9 @@
             <exclude />
         </member>
         <member name="T:ReadyM.Api.Mapping.Data.FieldSetterDelegate`2">
+            <exclude />
+        </member>
+        <member name="T:ReadyM.Api.Mapping.Data.FieldSetterFromApiDelegate`2">
             <exclude />
         </member>
         <member name="M:ReadyM.Api.Mapping.Events.IMappedEventManager.InvokeInGameAndNotifyEcs``2(``0@,``1)">
@@ -278,6 +452,17 @@
         </member>
         <member name="T:ReadyM.Api.Mapping.Tags.IReadyComponent">
             <exclude />
+        </member>
+        <member name="T:ReadyM.Api.Mapping.Tags.IServerAuthoritative">
+            <summary>
+            Marks a component only the server is allowed to modify.
+            </summary>
+        </member>
+        <member name="T:ReadyM.Api.Mapping.Tags.IWorldAuthoritative">
+            <summary>
+            Marks a component the server authors on the world entity and projects onto every client, which applies
+            it to the game. The world entity has no client owner, so it is not gated on ownership.
+            </summary>
         </member>
         <member name="T:ReadyM.Api.Saves.FileInfo">
             <summary>

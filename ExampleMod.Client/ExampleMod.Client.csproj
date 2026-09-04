@@ -22,10 +22,11 @@
         <Reference Include="..\Dependencies\Client\ReadyM.Api.Multiplayer.dll">
             <Private>false</Private>
         </Reference>
-        <Reference Include="..\Dependencies\Client\Friflo.Engine.ECS.dll">
+        <!-- Oblivion-specific values shared with the server, e.g. CharacterAttribute. -->
+        <Reference Include="..\Dependencies\Client\ReadyM.Relay.Common.Oblivion.dll">
             <Private>false</Private>
         </Reference>
-        <Reference Include="..\Dependencies\Client\LiteNetLib.dll">
+        <Reference Include="..\Dependencies\Client\Friflo.Engine.ECS.dll">
             <Private>false</Private>
         </Reference>
         <Analyzer Include="..\Dependencies\Client\ReadyM.Api.Generators.dll" />
@@ -35,8 +36,10 @@
         <ProjectReference Include="..\ExampleMod.Common\ExampleMod.Common.csproj" />
     </ItemGroup>
 
+    <!-- Both hosts ship these; ExcludeAssets keeps them out of the build output. -->
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.7" />
+        <PackageReference Include="LiteNetLib" Version="1.3.5" ExcludeAssets="runtime" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.8" ExcludeAssets="runtime" />
     </ItemGroup>
 
 </Project>

@@ -9,6 +9,9 @@
             Holds the player character's movement and animation data.
             </summary>
         </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.ChangeComponent">
+            <exclude />
+        </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.ActorRotation">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent._actorRotation"/>
         </member>
@@ -123,10 +126,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationMovementComponent.ClearDirty">
@@ -140,10 +149,8 @@
             Holds the player character's animation state.
             </summary>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.#ctor(Yooni.Native.LowLevel.AllocatorKind)">
-            <summary>
-            Holds the player character's animation state.
-            </summary>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.InCombatStance">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._inCombatStance"/>
@@ -151,7 +158,7 @@
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CurrentAnimAction">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._currentAnimAction"/>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.AnimActionSamples_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.AnimActionSamples_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample},System.Int32)">
             <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ComboHitIndex">
@@ -175,22 +182,22 @@
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.UseRotationSpeedCurve">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._useRotationSpeedCurve"/>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.GameplayTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.GameplayTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentGameplayTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentGameplayTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.AnimTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.AnimTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentAnimTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentAnimTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.LastAnimTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.LastAnimTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentLastAnimTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentLastAnimTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.OrientRotationToMovement">
@@ -214,22 +221,22 @@
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CanFootLock">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._canFootLock"/>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.AttackingTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.AttackingTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentAttackingTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentAttackingTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.BlockingTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.BlockingTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentBlockingTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentBlockingTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.EquipUnequipTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.EquipUnequipTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentEquipUnequipTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ParentEquipUnequipTags_SetFromApi(Yooni.Native.Container.NativeList{Yooni.Native.Container.NativeString256},System.Int32)">
             <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.AttackingRequest">
@@ -238,7 +245,7 @@
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CastingRequest">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._castingRequest"/>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CastingRequestSamples_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.CastingRequestSamples_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample},System.Int32)">
             <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.RecoilingRequest">
@@ -298,7 +305,7 @@
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.MeleePlayRate">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent._meleePlayRate"/>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.MeleeMontageSamples_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.MeleeMontageSamples_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.SequencedSample},System.Int32)">
             <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.MontageName">
@@ -322,10 +329,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AnimationStateComponent.ClearDirty">
@@ -339,10 +352,8 @@
             Holds the player character's appearance settings.
             </summary>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.#ctor(Yooni.Native.LowLevel.AllocatorKind)">
-            <summary>
-            Holds the player character's appearance settings.
-            </summary>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.Sex">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent._sex"/>
@@ -407,10 +418,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.AppearanceComponent.ClearDirty">
@@ -423,6 +440,9 @@
             <summary>
             Holds an Oblivion actor's Base ID.
             </summary>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.BaseId">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent._baseId"/>
@@ -442,10 +462,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.ClearDirty">
@@ -454,10 +480,52 @@
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.BaseIdComponent.IsDirty">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.Topics_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.DialogueTopic})">
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.ChangeComponent">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.Responses_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.DialogueResponse})">
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.IsDiscovered">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent._isDiscovered"/>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.Fields">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.ClearApiFlag">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.ClearApiFlag(System.Int32)">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.ChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.MarkChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.ClearDirty">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.CellDiscoveryComponent.IsDirty">
+            <exclude />
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.ChangeComponent">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.Topics_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.DialogueTopic},System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.Responses_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.DialogueResponse},System.Int32)">
             <exclude />
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.Fields">
@@ -475,10 +543,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.ClearDirty">
@@ -487,28 +561,71 @@
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.DialogueComponent.IsDirty">
             <exclude />
         </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent">
+            <summary>
+            Holds the difficulty the server dictates for every client in the session.
+            </summary>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.ChangeComponent">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.DamageDealt">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent._damageDealt"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.DamageTaken">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent._damageTaken"/>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.Fields">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.ClearApiFlag">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.ClearApiFlag(System.Int32)">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.ChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.MarkChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.ClearDirty">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.DifficultyComponent.IsDirty">
+            <exclude />
+        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent">
             <summary>
             Holds the player's dynamic forms, including spells and alchemy effects.
             </summary>
-            <param name="allocatorKind"></param>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.#ctor(Yooni.Native.LowLevel.AllocatorKind)">
-            <summary>
-            Holds the player's dynamic forms, including spells and alchemy effects.
-            </summary>
-            <param name="allocatorKind"></param>
-        </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.Spells_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.DynamicSpellEntry})">
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.ChangeComponent">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.SpellEffects_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.Spells_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.DynamicSpellEntry},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.Alchemy_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.AlchemyEntry})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.SpellEffects_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry},System.Int32)">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.AlchemyEffects_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry})">
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.Alchemy_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.AlchemyEntry},System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.AlchemyEffects_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.MagicEffectEntry},System.Int32)">
             <exclude />
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.Fields">
@@ -526,10 +643,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.DynamicFormsComponent.ClearDirty">
@@ -543,10 +666,8 @@
             Holds player character's effect attributes' values.
             </summary>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EffectsAttributesComponent.#ctor(Yooni.Native.LowLevel.AllocatorKind)">
-            <summary>
-            Holds player character's effect attributes' values.
-            </summary>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.EffectsAttributesComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.EffectsAttributesComponent.Fields">
             <exclude />
@@ -563,10 +684,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EffectsAttributesComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EffectsAttributesComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EffectsAttributesComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EffectsAttributesComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EffectsAttributesComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EffectsAttributesComponent.ClearDirty">
@@ -580,13 +707,14 @@
             Holds the player's equipment.
             </summary>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.#ctor(Yooni.Native.LowLevel.AllocatorKind)">
-            <summary>
-            Holds the player's equipment.
-            </summary>
-        </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.Items_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.InventoryEntry})">
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.ChangeComponent">
             <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.Items_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.InventoryEntry},System.Int32)">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.CurrentPoison">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent._currentPoison"/>
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.Fields">
             <exclude />
@@ -603,10 +731,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.EquipmentComponent.ClearDirty">
@@ -622,10 +756,55 @@
             older saves of that component unreadable.
             </summary>
         </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.ChangeComponent">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.Quests_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.QuestEntry},System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.CompassTargets_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.QuestCompassTarget},System.Int32)">
+            <exclude />
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.Fields">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.ClearApiFlag">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.ClearApiFlag(System.Int32)">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.ChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.MarkChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.ClearDirty">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.JournalComponent.IsDirty">
+            <exclude />
+        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent">
             <summary>
             Holds the player's ID.
             </summary>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.PlayerId">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent._playerId"/>
@@ -645,10 +824,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.MainCharacterComponent.ClearDirty">
@@ -661,6 +846,9 @@
             <summary>
             Holds the player's nickname.
             </summary>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent.Nickname">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent._nickname"/>
@@ -680,10 +868,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.NicknameComponent.ClearDirty">
@@ -697,8 +891,11 @@
             Holds the player character's parent cell information.
             </summary>
         </member>
-        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.IsExterior">
-            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent._isExterior"/>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.ChangeComponent">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.Kind">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent._kind"/>
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.X">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent._x"/>
@@ -721,10 +918,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.ParentCellComponent.ClearDirty">
@@ -738,11 +941,17 @@
             Holds the player character's activity flags.
             </summary>
         </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.ChangeComponent">
+            <exclude />
+        </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.InCombat">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent._inCombat"/>
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.InDialogue">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent._inDialogue"/>
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.DetectedByOtherPlayer">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent._detectedByOtherPlayer"/>
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.Fields">
             <exclude />
@@ -759,10 +968,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.ClearDirty">
@@ -771,40 +986,13 @@
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.PlayerActivityComponent.IsDirty">
             <exclude />
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuestComponent.Quests_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.QuestEntry})">
-            <exclude />
-        </member>
-        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.QuestComponent.Fields">
-            <exclude />
-        </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuestComponent.ClearApiFlag">
-            <exclude />
-        </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuestComponent.ClearApiFlag(System.Int32)">
-            <exclude />
-        </member>
-        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.QuestComponent.ChangedFromApi">
-            <exclude />
-        </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuestComponent.MarkChangedFromApi">
-            <exclude />
-        </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuestComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
-            <exclude />
-        </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuestComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
-            <exclude />
-        </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuestComponent.ClearDirty">
-            <exclude />
-        </member>
-        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.QuestComponent.IsDirty">
-            <exclude />
-        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent">
             <summary>
             Holds the player character's quiver information.
             </summary>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.HasQuiver">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent._hasQuiver"/>
@@ -827,10 +1015,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.ClearDirty">
@@ -839,15 +1033,52 @@
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.QuiverComponent.IsDirty">
             <exclude />
         </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.ChangeComponent">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.RefId">
+            <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent._refId"/>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.Fields">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.ClearApiFlag">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.ClearApiFlag(System.Int32)">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.ChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.MarkChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.ClearDirty">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.RefIdComponent.IsDirty">
+            <exclude />
+        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.SkillAttributesComponent">
             <summary>
             Holds the player character's skill attributes.
             </summary>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SkillAttributesComponent.#ctor(Yooni.Native.LowLevel.AllocatorKind)">
-            <summary>
-            Holds the player character's skill attributes.
-            </summary>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.SkillAttributesComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.SkillAttributesComponent.Fields">
             <exclude />
@@ -864,10 +1095,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SkillAttributesComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SkillAttributesComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SkillAttributesComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SkillAttributesComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SkillAttributesComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SkillAttributesComponent.ClearDirty">
@@ -881,10 +1118,8 @@
             Holds the player character's social attributes.
             </summary>
         </member>
-        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.#ctor(Yooni.Native.LowLevel.AllocatorKind)">
-            <summary>
-            Holds the player character's social attributes.
-            </summary>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.Fields">
             <exclude />
@@ -901,10 +1136,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.ClearDirty">
@@ -913,10 +1154,52 @@
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.SocialAttributesComponent.IsDirty">
             <exclude />
         </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.ChangeComponent">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.Topics_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.SpokenTopicEntry},System.Int32)">
+            <exclude />
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.Fields">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.ClearApiFlag">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.ClearApiFlag(System.Int32)">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.ChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.MarkChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.ClearDirty">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.SpokenTopicsComponent.IsDirty">
+            <exclude />
+        </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent">
             <summary>
             Holds the number of items in a dropped item stack.
             </summary>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent.Count">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent._count"/>
@@ -936,10 +1219,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.StackCountComponent.ClearDirty">
@@ -952,6 +1241,9 @@
             <summary>
             Holds the global time state of the game world.
             </summary>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.GameHour">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent._gameHour"/>
@@ -977,10 +1269,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TimeComponent.ClearDirty">
@@ -998,6 +1296,9 @@
             <summary>
             Rotation around the vertical axis (yaw) in degrees.
             </summary>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent.Position">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent._position"/>
@@ -1020,10 +1321,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.TransformComponent.ClearDirty">
@@ -1036,6 +1343,9 @@
             <summary>
             Holds the player character's vital attributes.
             </summary>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.Hp">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent._hp"/>
@@ -1073,10 +1383,16 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.VitalsComponent.ClearDirty">
@@ -1089,6 +1405,9 @@
             <summary>
             Holds the global weather state of the game world.
             </summary>
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.ChangeComponent">
+            <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.WeatherFormId">
             <inheritdoc cref="F:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent._weatherFormId"/>
@@ -1111,16 +1430,61 @@
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.MarkChangedFromApi">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
             <exclude />
         </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
             <exclude />
         </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
         <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.ClearDirty">
             <exclude />
         </member>
         <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.WeatherComponent.IsDirty">
+            <exclude />
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.ChangeComponent">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.Flags_SetFromApi(Yooni.Native.Container.NativeList{ReadyM.Relay.Common.Oblivion.ECS.Values.WorldFlagEntry},System.Int32)">
+            <exclude />
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.Fields">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.ClearApiFlag">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.ClearApiFlag(System.Int32)">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.ChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.MarkChangedFromApi">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.DeserializeTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.WriteDelta(LiteNetLib.Utils.NetDataWriter)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.ReadDelta(LiteNetLib.Utils.NetDataReader)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.ReadDeltaTracking(LiteNetLib.Utils.NetDataReader,System.Int32)">
+            <exclude />
+        </member>
+        <member name="M:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.ClearDirty">
+            <exclude />
+        </member>
+        <member name="P:ReadyM.Relay.Common.Oblivion.ECS.Components.WorldStateComponent.IsDirty">
             <exclude />
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.ECS.Tags.KeepEmptyOblivionScopeAliveTag">
@@ -1184,6 +1548,23 @@
         </member>
         <member name="T:ReadyM.Relay.Common.Oblivion.Data.Items.Weapons">
             Lists all weapons in the game.
+        </member>
+        <member name="T:ReadyM.Relay.Common.Oblivion.ServerRpcManifest">
+            <exclude/>
+            <summary>
+            Single source of truth for server RPC code assignment in this mod.
+            Referenced by both the server handler and client event generators.
+            Set <see cref="P:ReadyM.Relay.Common.Oblivion.ServerRpcManifest.Offset"/> once at mod startup before any InitRpc() runs:
+            <code>
+              ServerRpcManifest.Offset = offsetProvider.GetNextOffset(ServerRpcManifest.TotalEventCount);
+            </code>
+            </summary>
+        </member>
+        <member name="F:ReadyM.Relay.Common.Oblivion.ServerRpcManifest.Id">
+            <summary>
+            Stable identity of this contract set (the declaring assembly's name). Offsets are
+            assigned in Id order, so every process agrees regardless of mod load order.
+            </summary>
         </member>
     </members>
 </doc>

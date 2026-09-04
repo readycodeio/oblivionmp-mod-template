@@ -1,0 +1,430 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OblivionMp.Sdk</name>
+    </assembly>
+    <members>
+        <member name="T:OblivionMp.Sdk.Api.IMarkerApi">
+            <summary>
+            Creates and manages local markers over player characters.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.IMarkerApi.CreateMarker(OblivionMp.Sdk.Entities.Player.ReadyMainCharacter,System.String,OblivionMp.Sdk.Values.MarkerColor)">
+            <summary>
+            Creates a marker over <paramref name="target"/> showing <paramref name="text"/> in <paramref name="color"/>.
+            Returns <see cref="P:OblivionMp.Sdk.Values.MarkerHandle.None"/> if the target has no spawned pawn yet.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.IMarkerApi.SetMarkerText(OblivionMp.Sdk.Values.MarkerHandle,System.String,OblivionMp.Sdk.Values.MarkerColor)">
+            <summary>Updates the text and color of an existing marker. No-op for <see cref="P:OblivionMp.Sdk.Values.MarkerHandle.None"/>.</summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.IMarkerApi.DestroyMarker(OblivionMp.Sdk.Values.MarkerHandle)">
+            <summary>Destroys a marker. No-op for <see cref="P:OblivionMp.Sdk.Values.MarkerHandle.None"/> or an already-destroyed handle.</summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.IMarkerApi.SetMarkerVisible(OblivionMp.Sdk.Values.MarkerHandle,System.Boolean)">
+            <summary>Shows or hides a marker without destroying it. No-op for <see cref="P:OblivionMp.Sdk.Values.MarkerHandle.None"/>.</summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.IMarkerApi.SetMarkerOpacity(OblivionMp.Sdk.Values.MarkerHandle,System.Single)">
+            <summary> Sets a marker's opacity, from 0 (fully transparent) to 1 (fully opaque). No-op for <see cref="P:OblivionMp.Sdk.Values.MarkerHandle.None"/>.</summary>
+        </member>
+        <member name="T:OblivionMp.Sdk.Api.IOblivionChatApi">
+            <summary>
+            API for interacting with the in-game chat.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.IOblivionChatApi.ShowLocalMessage(System.String,OblivionMpCSharpMod.Values.Color)">
+            <summary>
+            Adds a message to the in-game chat, visible only to the local player.
+            </summary>
+            <param name="message">The message to add to the chat.</param>
+            <param name="color">The color of the message in the chat.</param>
+        </member>
+        <member name="T:OblivionMp.Sdk.Api.IOblivionGameMessageApi">
+            <summary>
+            Provides methods related to in-game info messages.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.IOblivionGameMessageApi.ShowMessage(System.String,OblivionMpCSharpMod.MessagePosition,System.Single)">
+            <summary>
+            Displays a message on the screen using the game UI widget.
+            </summary>
+            <param name="message">The message to display.</param>
+            <param name="position">Where on the screen the message should appear. Defaults to <see cref="F:OblivionMpCSharpMod.MessagePosition.Center"/>.</param>
+            <param name="duration">How long, in seconds, the message stays on screen. Defaults to 3 seconds.</param>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.IOblivionGameMessageApi.ShowInfoMessage(System.String)">
+            <summary>
+            Displays an informational message on the screen.
+            </summary>
+            <param name="message">The informational message to display.</param>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.IOblivionGameMessageApi.HideInfoMessage">
+            <summary>
+            Hides the currently displayed informational message.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.IOblivionGameMessageApi.ShowGameMessage(System.String,System.String,System.String)">
+            <summary>
+            Displays a multi-line game message on the screen.
+            </summary>
+            <param name="mainText">The primary line of the message.</param>
+            <param name="secondText">The second line of the message. Optional.</param>
+            <param name="thirdText">The third line of the message. Optional.</param>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.IOblivionGameMessageApi.HideGameMessage">
+            <summary>
+            Hides the currently displayed game message.
+            </summary>
+        </member>
+        <member name="T:OblivionMp.Sdk.Api.IOblivionSyncApi">
+            <inheritdoc cref="T:ReadyM.Sdk.Common.Entities.ISynchronizationApi`1"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.Api.IOblivionSyncApi.AreaPlayers">
+            <summary>
+            Players in the local player's current area including the local player.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Api.IOblivionSyncApi.AllDroppedItems">
+            <summary>
+            Gets all dropped items in the game world.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:OblivionMp.Sdk.Api.IOblivionSyncApi.SpawnDroppedItem(ReadyM.Relay.Common.Oblivion.FormId,System.Int32,System.Numerics.Vector3)" -->
+        <member name="T:OblivionMp.Sdk.Api.MarkerApi">
+            <inheritdoc cref="T:OblivionMp.Sdk.Api.IMarkerApi"/>
+        </member>
+        <member name="M:OblivionMp.Sdk.Api.MarkerApi.#ctor(OblivionMpCSharpMod.NativeMarkerControl)">
+            <inheritdoc cref="T:OblivionMp.Sdk.Api.IMarkerApi"/>
+        </member>
+        <member name="T:OblivionMp.Sdk.CustomPotion">
+            <summary>
+            Properties of a custom potion item.
+            </summary>
+        </member>
+        <member name="T:OblivionMp.Sdk.CustomSpell">
+            <summary>
+            Properties of a custom spell.
+            </summary>
+        </member>
+        <member name="T:OblivionMp.Sdk.Entities.DroppedItem.ReadyDroppedItem">
+            <summary>
+            Represents an item that was dropped in the game world, either by a player or by the game itself.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.DroppedItem.ReadyDroppedItem.FormId">
+            <summary>
+            The <see cref="P:OblivionMp.Sdk.Entities.DroppedItem.ReadyDroppedItem.FormId"/> of the item that was dropped.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.DroppedItem.ReadyDroppedItem.StackSize">
+            <remarks>
+            Only accurate for items spawned via <see cref="M:OblivionMp.Sdk.Api.OblivionSyncApi.SpawnDroppedItem(ReadyM.Relay.Common.Oblivion.FormId,System.Int32,System.Numerics.Vector3)"/>. Items discovered
+            from organic in-game drops (<c>DroppedItemSystem</c>) don't populate this yet and will read 0.
+            </remarks>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyActorExtensions.get_Pawn``1(``0)">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Extensions.ReadyActorExtensions.&lt;G&gt;$C84FB8C4C10E0E01FC482377331A9398`1.Pawn"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Extensions.ReadyActorExtensions.&lt;G&gt;$C84FB8C4C10E0E01FC482377331A9398`1.Pawn">
+            <summary>
+            The in-game pawn (actor) of the player.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.get_Hp``1(``0)">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.&lt;G&gt;$D402CC26CAD632D65E0ADCFCD922A3AB`1.Hp"/>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.set_Hp``1(``0,System.Single)">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.&lt;G&gt;$D402CC26CAD632D65E0ADCFCD922A3AB`1.Hp"/>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.get_Magicka``1(``0)">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.&lt;G&gt;$D402CC26CAD632D65E0ADCFCD922A3AB`1.Magicka"/>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.set_Magicka``1(``0,System.Single)">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.&lt;G&gt;$D402CC26CAD632D65E0ADCFCD922A3AB`1.Magicka"/>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.get_Fatigue``1(``0)">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.&lt;G&gt;$D402CC26CAD632D65E0ADCFCD922A3AB`1.Fatigue"/>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.set_Fatigue``1(``0,System.Single)">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.&lt;G&gt;$D402CC26CAD632D65E0ADCFCD922A3AB`1.Fatigue"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.&lt;G&gt;$D402CC26CAD632D65E0ADCFCD922A3AB`1.Hp">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.Hp"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.&lt;G&gt;$D402CC26CAD632D65E0ADCFCD922A3AB`1.Magicka">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.Magicka"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Extensions.ReadyCharacterExtensions.&lt;G&gt;$D402CC26CAD632D65E0ADCFCD922A3AB`1.Fatigue">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.Fatigue"/>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.get_Location``1(``0)">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.&lt;G&gt;$61E25D39D55893567F4B99099B22FF7C`1.Location"/>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.set_Location``1(``0,System.Numerics.Vector3)">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.&lt;G&gt;$61E25D39D55893567F4B99099B22FF7C`1.Location"/>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.get_Rotation``1(``0)">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.&lt;G&gt;$61E25D39D55893567F4B99099B22FF7C`1.Rotation"/>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.set_Rotation``1(``0,System.Numerics.Vector3)">
+            <inheritdoc cref="P:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.&lt;G&gt;$61E25D39D55893567F4B99099B22FF7C`1.Rotation"/>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.SetLocationRotation``1(``0,System.Numerics.Vector3,System.Numerics.Vector3)">
+            <inheritdoc cref="M:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.&lt;G&gt;$61E25D39D55893567F4B99099B22FF7C`1.SetLocationRotation(System.Numerics.Vector3,System.Numerics.Vector3)"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.&lt;G&gt;$61E25D39D55893567F4B99099B22FF7C`1.Location">
+            <summary>
+            Current coordinates of the object or character.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.&lt;G&gt;$61E25D39D55893567F4B99099B22FF7C`1.Rotation">
+            <summary>
+            Current rotation of the character on each axis.
+            Only the Y axis (yaw) is used for characters, so the X and Z axes will always be 0.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Extensions.ReadyObjectExtensions.&lt;G&gt;$61E25D39D55893567F4B99099B22FF7C`1.SetLocationRotation(System.Numerics.Vector3,System.Numerics.Vector3)">
+            <summary>
+            Set the location and rotation of the object or character.
+            For the rotation, only the Y axis (yaw) is used for characters, so the X and Z axes will be ignored.
+            </summary>
+        </member>
+        <member name="T:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter">
+            <summary>
+            Represents the player character entity in the game, providing access to its properties.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.Animation">
+            <summary>
+            Set of flags useful for checking which actions is the player is currently performing.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.Sex">
+            <summary>
+            Character gender.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.GetAttribute(ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterAttribute)">
+            <summary>
+            Gets the target attribute value from the character.
+            </summary>
+            <param name="attribute">Type of attribute</param>
+            <example>
+            player.GetAttribute(CharacterAttribute.Security);
+            </example>
+            <returns>Current level of specified attribute</returns>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.SetAttribute(ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterAttribute,System.Single)">
+            <summary>
+            Sets the target attribute to specified value.
+            </summary>
+            <param name="attribute">Type of attribute</param>
+            <param name="value">Desired level of the attribute</param>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.GetEffectValue(ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterEffect)">
+            <summary>
+            Gets the target effect value from character.
+            </summary>
+            <param name="effect">Type of effect</param>
+            <returns>Strength of the effect</returns>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.SetEffectValue(ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterEffect,System.Single)">
+            <summary>
+            Sets the target effect on character.
+            </summary>
+            <param name="effect">Type of effect</param>
+            <param name="value">Strength of the effect</param>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.GetSocialAttribute(ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterSocialAttribute)">
+            <summary>
+            Gets the social interaction attribute level
+            </summary>
+            <param name="attribute">Type of social attribute</param>
+            <returns>Current level of the attribute</returns>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.SetSocialAttribute(ReadyM.Relay.Common.Oblivion.ECS.Values.CharacterSocialAttribute,System.Single)">
+            <summary>
+            Sets the specified social interaction attribute to desired level
+            </summary>
+            <param name="attribute">Type of social attribute</param>
+            <param name="value">Desired level of the social attribute</param>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.ClearInventory">
+            <summary>
+            Clear character inventory.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.AddItemToInventory(ReadyM.Relay.Common.Oblivion.FormId,System.Int32)">
+            <summary>
+            Add the specified item to the inventory.
+            Check <see cref="T:ReadyM.Relay.Common.Oblivion.Data.Items"/> for item list.
+            </summary>
+            <param name="itemId">The <see cref="T:ReadyM.Relay.Common.Oblivion.FormId"/> of the item to add.</param>
+            <param name="quantity">Number of items to add.</param>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.RemoveItemFromInventory(ReadyM.Relay.Common.Oblivion.FormId,System.Int32)">
+            <summary>
+            Remove an item from the player's inventory.
+            Check <see cref="T:ReadyM.Relay.Common.Oblivion.Data.Items"/> for item list.
+            If the quantity to remove is greater than the current quantity, the item will be completely removed from the inventory.
+            </summary>
+            <param name="itemId">FormId of the item to remove.</param>
+            <param name="quantity">The quantity of the item to remove. Defaults to <c>int.MaxValue</c>, which will remove all instances of the item.</param>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.HasItemInInventory(ReadyM.Relay.Common.Oblivion.FormId)">
+            <summary>
+            Checks whether the character has the specified item in the inventory.
+            </summary>
+            <param name="itemId">Target item FormId.</param>
+            <returns>
+            True if at least one item of given FormId is found in inventory.
+            </returns>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.HasItemInInventory(ReadyM.Relay.Common.Oblivion.FormId,System.Int32@)">
+            <inheritdoc cref="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.HasItemInInventory(ReadyM.Relay.Common.Oblivion.FormId)"/>
+            <param name="itemCount">Possessed item count.</param>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.HasTorchEquipped">
+            <summary>
+            Checks whether character has a torch equipped.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.HasQuiverEquipped">
+            <summary>
+            Checks whether character has any arrows equipped.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.ArrowCount">
+            <summary>
+            Gets number of arrows left in quiver.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.PlayerId">
+            <summary>
+            Gets the Player ID.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.Nickname">
+            <summary>
+            Gets the visible player nickname.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.GetGlobal``1">
+            <summary>
+            Get a reference to a component of type T on the global player archetype entity associated with this player character entity.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.Get``1">
+            <summary>
+            Get a reference to a component of type T on the player character entity.
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.RebirthLocalPlayer">
+            <summary>
+            Rebirths (revives) the local player character.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.InCombat">
+            <summary>
+            Checks whether the character is in active combat.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.InDialogue">
+            <summary>
+            Checks whether the character is in active dialogue menu.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.Visibility">
+            <summary>
+            How visible the character currently is, from 0 (fully hidden) to 1 (fully visible).
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.Hp">
+            <summary>
+            Current Hp (HealthPoints) of the character. Unclear behavior as of now. Some actions reset it to MaxHp while some modify only this value.
+            Does not impact MaxHp value.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.MaxHp">
+            <summary>
+            Current base Hp (HealthPoints) of the character. Unclear behavior as of now. Some actions reset it to MaxHp
+            while some modify only this value.
+            Does not impact MaxHp value.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.Magicka">
+            <summary>
+            Current Magicka (Mana) of the character.
+            Does not impact MaxMagicka value.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Entities.Player.ReadyMainCharacter.Fatigue">
+            <summary>
+            Current Fatigue (Green bar) of the character.
+            Does not impact MaxFatigue value.
+            </summary>
+        </member>
+        <member name="T:OblivionMp.Sdk.MagicEffect">
+            <summary>
+            Properties of a magic effect that is part of a custom spell or potion.
+            </summary>
+        </member>
+        <member name="T:OblivionMp.Sdk.SDK">
+            <summary>
+            Provides access to the OblivionMp SDK services and APIs.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.SDK.Services">
+            <inheritdoc cref="T:ReadyM.Api.DI.IDependencyContainer"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.SDK.Input">
+            <inheritdoc cref="T:ReadyM.Sdk.Common.Api.IInputApi"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.SDK.Sync">
+            <inheritdoc cref="T:OblivionMp.Sdk.Api.IOblivionSyncApi"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.SDK.Markers">
+            <inheritdoc cref="T:OblivionMp.Sdk.Api.IMarkerApi"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.SDK.Chat">
+            <inheritdoc cref="T:OblivionMp.Sdk.Api.IOblivionChatApi"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.SDK.GameMessage">
+            <inheritdoc cref="T:OblivionMp.Sdk.Api.IOblivionGameMessageApi"/>
+        </member>
+        <member name="P:OblivionMp.Sdk.SDK.Archetypes.GlobalPlayerArchetype">
+            <summary>s
+            Gets the archetype ID of main character entities. Useful for assigning components which need to be persistent across different areas.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.SDK.Archetypes.MainCharacterArchetype">
+            <summary>
+            Gets the archetype ID of main character entities.
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.SDK.Archetypes.DroppedItemArchetype">
+            <summary>
+            Gets the archetype ID of dropped item entities.
+            </summary>
+        </member>
+        <member name="T:OblivionMp.Sdk.Values.MarkerColor">
+            <summary>RGBA marker color, each channel 0..1.</summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Values.MarkerColor.#ctor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>RGBA marker color, each channel 0..1.</summary>
+        </member>
+        <member name="T:OblivionMp.Sdk.Values.MarkerHandle">
+            <summary>
+            Handle to a marker. Zero means "no marker" (see <see cref="P:OblivionMp.Sdk.Values.MarkerHandle.None"/>).
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Values.MarkerHandle.#ctor(System.UInt64)">
+            <summary>
+            Handle to a marker. Zero means "no marker" (see <see cref="P:OblivionMp.Sdk.Values.MarkerHandle.None"/>).
+            </summary>
+        </member>
+        <member name="P:OblivionMp.Sdk.Values.MarkerHandle.None">
+            <summary>The empty handle.</summary>
+        </member>
+    </members>
+</doc>

@@ -10,32 +10,36 @@
          compiler record references the server host can't all satisfy at load time, which makes the
          mod loader silently skip the mod. Private=false: the host provides these at runtime. -->
     <ItemGroup>
-        <Reference Include="..\Dependencies\Server\SDK\OblivionMp.Sdk.Serverside.dll">
+        <Reference Include="..\Dependencies\Server\OblivionMp.Sdk.Serverside.dll">
             <Private>false</Private>
         </Reference>
-        <Reference Include="..\Dependencies\Server\Host\ReadyM.Relay.Server.Sdk.dll">
+        <Reference Include="..\Dependencies\Server\ReadyM.Relay.Server.Sdk.dll">
             <Private>false</Private>
         </Reference>
-        <Reference Include="..\Dependencies\Server\Host\ReadyM.Api.dll">
+        <Reference Include="..\Dependencies\Server\ReadyM.Api.dll">
             <Private>false</Private>
         </Reference>
-        <Reference Include="..\Dependencies\Server\Host\ReadyM.Api.Multiplayer.dll">
+        <Reference Include="..\Dependencies\Server\ReadyM.Api.Multiplayer.dll">
             <Private>false</Private>
         </Reference>
-        <Reference Include="..\Dependencies\Server\Host\Friflo.Engine.ECS.dll">
+        <!-- Oblivion-specific values shared with the client, e.g. CharacterAttribute. -->
+        <Reference Include="..\Dependencies\Server\ReadyM.Relay.Common.Oblivion.dll">
             <Private>false</Private>
         </Reference>
-        <Reference Include="..\Dependencies\Server\Host\LiteNetLib.dll">
+        <Reference Include="..\Dependencies\Server\Friflo.Engine.ECS.dll">
             <Private>false</Private>
         </Reference>
-        <Reference Include="..\Dependencies\Server\Host\Microsoft.Extensions.Logging.Abstractions.dll">
-            <Private>false</Private>
-        </Reference>
-        <Analyzer Include="..\Dependencies\Server\Host\ReadyM.Api.Generators.dll" />
+        <Analyzer Include="..\Dependencies\Server\ReadyM.Api.Generators.dll" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\ExampleMod.Common\ExampleMod.Common.csproj" />
+    </ItemGroup>
+
+    <!-- Both hosts ship these; ExcludeAssets keeps them out of the build output. -->
+    <ItemGroup>
+        <PackageReference Include="LiteNetLib" Version="1.3.5" ExcludeAssets="runtime" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.8" ExcludeAssets="runtime" />
     </ItemGroup>
 
 </Project>

@@ -9,6 +9,12 @@
             The mod name
             </summary>
         </member>
+        <member name="M:ReadyM.Modloader.Mods.ICSharpMod.SetModDirectory(System.String)">
+            <summary>
+            The mod's own folder under the mods directory, where its files live. Pushed in by the loader
+            rather than derived from the assembly, whose location is a clone of the original in reload mode.
+            </summary>
+        </member>
         <member name="M:ReadyM.Modloader.Mods.ICSharpMod.Init(ReadyM.Api.DI.IDependencyContainer)">
             <exclude />
         </member>

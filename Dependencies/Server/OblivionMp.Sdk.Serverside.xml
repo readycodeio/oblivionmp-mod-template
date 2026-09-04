@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OblivionMp.Sdk.Serverside</name>
+    </assembly>
+    <members>
+        <member name="T:OblivionMp.Sdk.Serverside.SessionDifficulty">
+            <summary>
+            The difficulty every client in the session runs at.
+            Leaving a tier Unset keeps clients on the game's own default tier (Adept).
+            </summary>
+        </member>
+        <member name="M:OblivionMp.Sdk.Serverside.SessionDifficulty.#ctor(ReadyM.Relay.Server.Sdk.Ecs.EcsApi)">
+            <summary>
+            The difficulty every client in the session runs at.
+            Leaving a tier Unset keeps clients on the game's own default tier (Adept).
+            </summary>
+        </member>
+    </members>
+</doc>

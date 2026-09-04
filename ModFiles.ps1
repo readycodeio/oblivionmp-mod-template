@@ -1,34 +1,53 @@
 #!powershell.exe -ExecutionPolicy Bypass -File
 
-# Edit these lists to specify which files end up in each packaged mod folder.
-# The client mod goes in the server's "mods/" directory; the server mod in "server_mods/".
+# Edit these lists to match your mod. MakeModFolder.ps1 uses them to build
+#
+#   Output/mods/<modName>/manifest.json
+#   Output/mods/<modName>/client/...
+#   Output/mods/<modName>/server/...
+#
+# The server hands the client folder to connecting players and keeps the server folder to itself.
 
-# --- Client mod (from ExampleMod.Client/bin/<Configuration>/net10.0) ---
+# Folder name of the packaged mod. Conventionally the uniqueId from manifest.json.
+$modName = "ExampleMod"
+
+# The projects the two halves build from.
+$clientProject = "ExampleMod.Client"
+$serverProject = "ExampleMod.Server"
+
+# --- Client half, from <clientProject>/bin/<Configuration>/net10.0 ---
 $clientBuildFiles = @(
     "ExampleMod.Client.dll",
-    "ExampleMod.Common.dll"   # shared assembly the mod depends on
+    "ExampleMod.Common.dll"   # shared assembly both halves need
 )
 
-# Copied from the "Content" folder to the client mod root
-$clientContentFiles = @(
-    # Add any non-code files your client mod uses here.
+# --- Server half, from <serverProject>/bin/<Configuration>/net10.0 ---
+$serverBuildFiles = @(
+    "ExampleMod.Server.dll",
+    "ExampleMod.Common.dll"
+)
+
+# Copied from "Content" into the mod root, alongside the two halves.
+$manifestFiles = @(
     "manifest.json"
 )
 
-# Copied only in Debug builds
-$clientDebugFiles = @(
+# Copied from "Content" into client/ and server/. Add any non-code files your mod ships.
+$clientContentFiles = @(
+    # "icon.png"
+)
+
+$serverContentFiles = @(
+    # "config.json"
+)
+
+# Added only in Debug builds.
+$clientDebugBuildFiles = @(
     "ExampleMod.Client.pdb",
     "ExampleMod.Common.pdb"
 )
 
-# --- Server mod (from ExampleMod.Server/bin/<Configuration>/net10.0) ---
-$serverBuildFiles = @(
-    "ExampleMod.Server.dll",
-    "ExampleMod.Common.dll"   # shared assembly the mod depends on
-)
-
-# Copied only in Debug builds
-$serverDebugFiles = @(
+$serverDebugBuildFiles = @(
     "ExampleMod.Server.pdb",
     "ExampleMod.Common.pdb"
 )

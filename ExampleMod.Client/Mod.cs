@@ -1,7 +1,6 @@
 using ExampleMod.Common;
 using OblivionMp.Sdk;
 using ReadyM.Api.DI;
-using ReadyM.Api.ECS.Registry;
 using ReadyM.Sdk.Common;
 using ReadyM.Sdk.Common.Api;
 using ReadyM.Sdk.Common.Input;
@@ -22,9 +21,14 @@ public class Mod : ModBase
         services.RegisterSingleton<ExampleServerRpc>();
         services.RegisterSingleton<ExampleClientRpc>();
 
-        // Register the shared component, then attach it to an archetype (see ExampleRegistration).
         services.Resolve<IComponentApi>().RegisterComponent<WalletComponent>();
-        services.RegisterSingleton<IArchetypeRegistration, ExampleRegistration>();
+
+        // Attaches components to archetypes while the ECS schema is built. Archetype membership
+        // has to match the server mod, or the two sides disagree about what an entity holds.
+        RegisterArchetypes(registry =>
+        {
+            registry.ModifyArchetype(SDK.Archetypes.GlobalPlayerArchetype, b => b.Add<WalletComponent>());
+        });
 
         _serverRpc = services.Resolve<ExampleServerRpc>();
     }
