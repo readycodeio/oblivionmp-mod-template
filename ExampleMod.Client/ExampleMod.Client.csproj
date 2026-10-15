@@ -6,40 +6,14 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <!-- Reference only the DLLs this mod actually needs. Pulling in the whole SDK folder makes the
-         compiler record references the game client can't all satisfy at load time, which makes the
-         mod loader silently skip the mod. Private=false: the host provides these at runtime. -->
+    <!-- The in-game SDK. It brings the shared package and the source generator with it. The game
+         provides these assemblies at runtime, so they never end up in your mod folder. -->
     <ItemGroup>
-        <Reference Include="..\Dependencies\Client\OblivionMp.Sdk.dll">
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="..\Dependencies\Client\ReadyM.Sdk.Common.dll">
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="..\Dependencies\Client\ReadyM.Api.dll">
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="..\Dependencies\Client\ReadyM.Api.Multiplayer.dll">
-            <Private>false</Private>
-        </Reference>
-        <!-- Oblivion-specific values shared with the server, e.g. CharacterAttribute. -->
-        <Reference Include="..\Dependencies\Client\ReadyM.Relay.Common.Oblivion.dll">
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="..\Dependencies\Client\Friflo.Engine.ECS.dll">
-            <Private>false</Private>
-        </Reference>
-        <Analyzer Include="..\Dependencies\Client\ReadyM.Api.Generators.dll" />
+        <PackageReference Include="ReadyM.SDK.Oblivion.Client" Version="1.0.0-rc.1" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\ExampleMod.Common\ExampleMod.Common.csproj" />
-    </ItemGroup>
-
-    <!-- Both hosts ship these; ExcludeAssets keeps them out of the build output. -->
-    <ItemGroup>
-        <PackageReference Include="LiteNetLib" Version="1.3.5" ExcludeAssets="runtime" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.8" ExcludeAssets="runtime" />
     </ItemGroup>
 
 </Project>
