@@ -97,9 +97,9 @@ function Update-FileText
     return $count
 }
 
-# Dependencies holds the SDK assemblies, .git and .idea are not ours to rewrite, and the rest is
-# build output that the cleanup above already removed.
-$skipped = @('Dependencies', 'Output', 'bin', 'obj', '.git', '.idea')
+# .git and .idea are not ours to rewrite, and the rest is build output that the cleanup above
+# already removed.
+$skipped = @('Output', 'bin', 'obj', '.git', '.idea')
 $selfPath = $PSCommandPath
 $isOurs = {
     $path = $_.FullName
@@ -147,5 +147,5 @@ if ($DryRun)
 else
 {
     Write-Host "Done. Open $NewName.sln and build it to check the rename."
-    Write-Host "Class names like ExampleServerRpc are feature names, not the mod name, so rename those yourself."
+    Write-Host "Class names like WalletKeys are feature names, not the mod name, so rename those yourself."
 }

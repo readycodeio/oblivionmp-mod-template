@@ -1,6 +1,6 @@
 # OblivionMP Mod Template
 
-![version](https://img.shields.io/badge/version-0.2.0-green)
+![version](https://img.shields.io/badge/version-1.0.0--rc.1-green)
 
 For other versions, check the list of [tags](https://github.com/readycodeio/oblivionmp-mod-template/tags).
 
@@ -17,32 +17,44 @@ Refer to the [OblivionMP SDK documentation](https://docs.ready.mp) for details o
 
 An OblivionMP mod is usually made of two halves that share a common core:
 
-- `ExampleMod.Common/`: shared code that both halves need. Networked component definitions
-  (`WalletComponent.cs`) and server-RPC contracts (`RpcContracts.cs`) live here. Its DLL ships
-  alongside both halves.
-- `ExampleMod.Client/`: the client-side half, loaded by the game. Entry point (`Mod.cs`), the client
-  side of server RPC (`ExampleServerRpc.cs`) and a client-relayed RPC (`ExampleClientRpc.cs`).
-- `ExampleMod.Server/`: the server-side half, loaded by the relay server. Entry point (`Mod.cs`), the
-  server side of server RPC (`ExampleServerRpc.cs`), and a gameplay system (`PassiveIncomeSystem.cs`).
+- `ExampleMod.Common/`: shared by both halves. The `Wallet` mixin (`Wallet.cs`) and every message the
+  mod sends (`RpcContracts.cs`) live here. Its DLL ships alongside both halves.
+- `ExampleMod.Client/`: the client half, loaded by the game. Entry point (`Mod.cs`), the client end of
+  the messages (`RpcHandlers.cs`) and a service that binds keys (`WalletKeys.cs`).
+- `ExampleMod.Server/`: the server half, loaded by the relay server. Entry point (`Mod.cs`), the
+  server end of the messages (`RpcHandlers.cs`) and a service that runs every tick
+  (`PassiveIncome.cs`).
 - `Content/manifest.json`: mod metadata (id, name, version, dependencies).
-- `Dependencies/`: the OblivionMP SDK assemblies the projects compile against, dumped from the SDK
-  build. `Client/` holds what the game provides, `Server/` what the relay server provides. The
-  projects reference them with `Private=false`, so they are never copied into your mod.
 
-The example is a small "wallet" feature: a networked `WalletComponent` on every player, an RPC to add
-gold and to read the balance, and a server system that grants passive income. Use it as a starting
-point and replace it with your own logic.
+The projects compile against the OblivionMP SDK packages from NuGet, one per half:
+`ReadyM.SDK.Oblivion.Common` for the shared project, `ReadyM.SDK.Oblivion.Client` for the game and
+`ReadyM.SDK.Oblivion.Server` for the relay. The game and the relay provide those assemblies at
+runtime, so they never end up in your mod folder.
+
+The example is a small wallet feature: a `Balance` on every player that the server owns and every
+client can read, a request to add gold and one to read the balance, a server service that grants
+passive income, and a ping one player sends to the others nearby. Use it as a starting point and
+replace it with your own logic.
+
+Key bindings in game: Alt+N adds gold, Alt+B shows your balance, Alt+P pings nearby players. The
+results go to the client log.
 
 ## Getting started
 
 1. Clone this repository to your local machine.
-2. Open `ExampleMod.sln` in your preferred C# IDE (e.g. JetBrains Rider, Visual Studio).
-3. Build the solution to ensure all dependencies resolve.
-4. Rename the projects and edit the code to build your own mod. Keep shared components and RPC
-   contracts in `ExampleMod.Common` so both halves agree on them.
+2. Open `ExampleMod.sln` in your preferred C# IDE (e.g. JetBrains Rider, Visual Studio) and build it.
+   The SDK packages restore from NuGet.
+3. Rename the mod so it does not collide with other mods on a server:
 
-> **Note**: A networked component's shape and its archetype membership must match between the two
-> halves. Ship them together as one package, which is what the packaging script produces.
+   ```powershell
+   .\RenameMod.ps1 Acme.TreasureHunt
+   ```
+
+4. Edit the code to build your own mod. Keep mixins and RPC contracts in the Common project so both
+   halves agree on them.
+
+> **Note**: both halves have to agree on every mixin and every message. Ship them together as one
+> mod folder, which is what the packaging script produces.
 
 ## Packaging the mod
 

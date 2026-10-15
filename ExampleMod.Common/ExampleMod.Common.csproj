@@ -6,26 +6,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <!-- Shared code for both halves, so it may only use assemblies both hosts provide. These are
-         byte-identical in Dependencies/Client and Dependencies/Server; Client is just the one we
-         point at. Private=false: the host provides them at runtime. -->
+    <!-- Shared code for both halves, so it may only use what both hosts provide. The shared SDK
+         package holds exactly that, plus the source generator. -->
     <ItemGroup>
-        <Reference Include="..\Dependencies\Client\ReadyM.Api.dll">
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="..\Dependencies\Client\ReadyM.Api.Multiplayer.dll">
-            <Private>false</Private>
-        </Reference>
-        <Reference Include="..\Dependencies\Client\Friflo.Engine.ECS.dll">
-            <Private>false</Private>
-        </Reference>
-        <Analyzer Include="..\Dependencies\Client\ReadyM.Api.Generators.dll" />
-    </ItemGroup>
-
-    <!-- Generated component serialization uses LiteNetLib's readers and writers. ExcludeAssets
-         keeps it out of the build output: the host loads its own copy. -->
-    <ItemGroup>
-        <PackageReference Include="LiteNetLib" Version="1.3.5" ExcludeAssets="runtime" />
+        <PackageReference Include="ReadyM.SDK.Oblivion.Common" Version="1.0.0-rc.1" />
     </ItemGroup>
 
 </Project>
