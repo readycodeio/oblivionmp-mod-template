@@ -1,6 +1,6 @@
 # OblivionMP Mod Template
 
-![version](https://img.shields.io/badge/version-1.0.0--rc.1-green)
+![version](https://img.shields.io/badge/version-1.0.0--rc.3-green)
 
 For other versions, check the list of [tags](https://github.com/readycodeio/oblivionmp-mod-template/tags).
 
