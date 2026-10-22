@@ -9,7 +9,7 @@
     <!-- The in-game SDK. It brings the shared package and the source generator with it. The game
          provides these assemblies at runtime, so they never end up in your mod folder. -->
     <ItemGroup>
-        <PackageReference Include="ReadyM.SDK.Oblivion.Client" Version="1.0.0-rc.2" />
+        <PackageReference Include="ReadyM.SDK.Oblivion.Client" Version="1.0.0-rc.3" />
     </ItemGroup>
 
     <ItemGroup>
