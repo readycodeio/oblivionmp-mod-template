@@ -9,7 +9,7 @@
     <!-- Shared code for both halves, so it may only use what both hosts provide. The shared SDK
          package holds exactly that, plus the source generator. -->
     <ItemGroup>
-        <PackageReference Include="ReadyM.SDK.Oblivion.Common" Version="1.0.0-rc.3" />
+        <PackageReference Include="ReadyM.SDK.Oblivion.Common" Version="1.0.0" />
     </ItemGroup>
 
 </Project>
