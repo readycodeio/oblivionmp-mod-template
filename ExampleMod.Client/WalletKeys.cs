@@ -1,6 +1,6 @@
 using OblivionMp.Sdk;
 using ReadyM.SDK.Attributes;
-using ReadyM.Sdk.Common.Input;
+using OblivionMpCSharpMod.Input;
 
 namespace ExampleMod.Client;
 
