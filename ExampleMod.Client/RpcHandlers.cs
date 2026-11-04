@@ -1,6 +1,6 @@
 using ExampleMod.Common;
 using Microsoft.Extensions.Logging;
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using ReadyM.Api.Idents;
 using ReadyM.SDK.Attributes;
 

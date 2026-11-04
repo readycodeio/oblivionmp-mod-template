@@ -1,4 +1,4 @@
-using OblivionMp.Sdk;
+using OblivionMP.SDK;
 using ReadyM.SDK.Attributes;
 using OblivionMpCSharpMod.Input;
 
