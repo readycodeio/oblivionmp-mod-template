@@ -1,5 +1,3 @@
-using ReadyM.Api.Multiplayer;
-using ReadyM.Api.Multiplayer.Protocol.Enums;
 using ReadyM.SDK.Attributes;
 
 namespace ExampleMod.Common;
